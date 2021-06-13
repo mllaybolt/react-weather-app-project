@@ -45,6 +45,10 @@ form {
   width: 305px;
 }
 
+#date {
+  font-size: 22px;
+}
+
 #search-button {
   border-radius: 5px;
   border: none;
@@ -63,7 +67,7 @@ form {
 }
 
 #weather-conditions {
-  margin-top: -20px;
+  margin-top: -15px;
 }
 
 #current-temperature-button {

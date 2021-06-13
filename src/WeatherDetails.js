@@ -41,6 +41,7 @@ export default function WeatherDetails(props) {
             type="search"
             placeholder="Search for a city"
             id="city-input"
+            autoComplete="off"
             onChange={handleCityChange}
           />
           <input type="submit" id="search-button" value="Search" />
