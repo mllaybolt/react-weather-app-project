@@ -1,29 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function FormattedDate(props) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let month = props.date.getMonth();
-  let date = props.date.getDate();
-  let day = days[props.date.getDay()];
-  let hours = props.date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
+export default function TempConversion(props) {
+  const [unit, setUnit] = useState("celsius");
+  function giveFahrenheit(event) {
+    event.preventDefault();
+    setUnit("fahrenheit");
   }
-  let minutes = props.date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
+
+  function giveCelsius(event) {
+    event.preventDefault();
+    setUnit("celsius");
   }
-  return (
-    <div>
-      {day}, {month} {date} - {hours}:{minutes}
-    </div>
-  );
+
+  if (unit === "celsius") {
+    return (
+      <div className="TempConversion">
+        <h2 id="temperature">
+          {Math.round(props.celsius)}
+          <span className="units">
+            °C |{" "}
+            <a href="/" onClick={giveFahrenheit} className="fahrenheit">
+              °F
+            </a>
+          </span>
+        </h2>
+      </div>
+    );
+  } else {
+    let fahrenheit = (props.celsius * 9) / 5 + 32;
+    return (
+      <div className="TempConversion">
+        <h2 id="temperature">
+          {Math.round(fahrenheit)}
+          <span className="units">
+            <a href="/" onClick={giveCelsius} className="celsius">
+              °C
+            </a>{" "}
+            | °F
+          </span>
+        </h2>
+      </div>
+    );
+  }
 }
