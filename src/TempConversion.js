@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./TempConversion.css";
 
 export default function TempConversion(props) {
   const [unit, setUnit] = useState("celsius");
@@ -18,6 +19,7 @@ export default function TempConversion(props) {
         <h2 id="temperature">
           {Math.round(props.celsius)}
           <span className="units">
+            {" "}
             °C |{" "}
             <a href="/" onClick={giveFahrenheit} className="fahrenheit">
               °F
@@ -33,6 +35,7 @@ export default function TempConversion(props) {
         <h2 id="temperature">
           {Math.round(fahrenheit)}
           <span className="units">
+            {" "}
             <a href="/" onClick={giveCelsius} className="celsius">
               °C
             </a>{" "}

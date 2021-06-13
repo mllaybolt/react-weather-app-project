@@ -1,0 +1,13 @@
+.footer-text {
+  text-align: center;
+  font-size: 9px;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #00ccff;
+}
