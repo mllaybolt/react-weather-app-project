@@ -1,6 +1,8 @@
-.footer-text {
+.footer-contents {
   text-align: center;
-  font-size: 9px;
+  position: relative;
+  bottom: -35px;
+  font-size: 10px;
   color: black;
 }
 
@@ -9,5 +11,5 @@ a {
 }
 
 a:hover {
-  color: #00ccff;
+  color: #a3ccc7;
 }

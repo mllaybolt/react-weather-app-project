@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import TempConversion from "./TempConversion";
 import FormattedDate from "./FormattedDate";
+import "./WeatherDetails.css";
 
 export default function WeatherDetails(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -43,21 +44,17 @@ export default function WeatherDetails(props) {
             onChange={handleCityChange}
           />
           <input type="submit" id="search-button" value="Search" />
-          <button id="current-temperature-button">current</button>
+          <button id="current-temperature-button">Current</button>
         </form>
-
+        <h1 id="current-location">{weatherData.city}</h1>{" "}
         <h3 id="date">
           <FormattedDate date={weatherData.date} />
         </h3>
-        <h1 id="current-location">{weatherData.city}</h1>
-        <TempConversion celsius={weatherData.temperature} />
-
+        <img src={weatherData.icon} className="icon" alt="current-weather" />
+        <h2>
+          <TempConversion celsius={weatherData.temperature} />
+        </h2>
         <h3 id="weather-conditions">{weatherData.description}</h3>
-        <img
-          src={weatherData.icon}
-          className="main-icon"
-          alt="current-weather"
-        />
       </div>
     );
   } else {

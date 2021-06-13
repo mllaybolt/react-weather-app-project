@@ -1,7 +1,8 @@
 .units {
   position: relative;
   font-size: small;
-  bottom: 9px;
+  color: #4f4f4f;
+  bottom: 30px;
 }
 
 .fahrenheit,
@@ -9,9 +10,14 @@
   text-decoration: none;
 }
 
-.fahrenheit,
+.fahrenheit:hover {
+  cursor: crosshair;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .celsius:hover {
   cursor: crosshair;
-  color: #00ccff;
+  color: #ffffff;
   text-decoration: none;
 }
